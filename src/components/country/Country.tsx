@@ -21,22 +21,16 @@ export default function Country({ country }: { country: CountryDetail }) {
                 <CardContent>
                     <Typography gutterBottom component="div" sx={{ fontWeight: 'bolder' }}>{country.name.common}</Typography>
                     <Grid container spacing={0}>
-                        <Grid item   >
+                        <Grid item sx={{ display: 'flex' }} xs={12}>
                             <Typography variant="body2" >Population : </Typography>
-                        </Grid>
-                        <Grid item xs={8}>
                             <Typography variant="body2" sx={{ mx: 1 }} color="text.secondary">{country.population}</Typography>
                         </Grid>
-                        <Grid item   >
+                        <Grid item sx={{ display: 'flex' }} xs={8}>
                             <Typography variant="body2" >Region : </Typography>
-                        </Grid>
-                        <Grid item xs={8}>
                             <Typography variant="body2" sx={{ mx: 1 }} color="text.secondary">{country.region}</Typography>
                         </Grid>
-                        <Grid item   >
+                        <Grid item sx={{ display: 'flex' }} xs={8}>
                             <Typography variant="body2" >Capital : </Typography>
-                        </Grid>
-                        <Grid item xs={8}>
                             <Typography variant="body2" sx={{ mx: 1 }} color="text.secondary">{country.capital}</Typography>
                         </Grid>
                     </Grid>
