@@ -110,7 +110,7 @@ export default function CountryDetails() {
             </Grid>
           </Grid>
         </Grid>
-        <Dialog open={borders.open}>
+        <Dialog open={borders.open} scroll="body">
           {borders.country ? (
             <>
               <Card sx={{ minWidth: 275 }}>
@@ -122,11 +122,10 @@ export default function CountryDetails() {
                   />
                   <CountryData country={borders.country} />
                 </CardContent>
-                <CardActions>
+                <CardActions sx={{ justifyContent: "flex-end" }}>
                   <Button
                     onClick={() => closeBorderDetails()}
                     variant="text"
-                    sx={{ my: 2 }}
                     endIcon={<CloseIcon />}
                   >
                     Close
