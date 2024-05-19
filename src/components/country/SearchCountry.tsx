@@ -1,18 +1,29 @@
-import { useEffect, useState, ChangeEvent } from 'react';
-import Grid from '@mui/material/Grid';
-import MenuItem from '@mui/material/MenuItem';
-import Box from '@mui/material/Box';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormControl from '@mui/material/FormControl';
-import TextField from '@mui/material/TextField';
-import SearchIcon from '@mui/icons-material/Search';
-import Typography from '@mui/material/Typography';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import { useEffect, useState, ChangeEvent } from "react";
+import Grid from "@mui/material/Grid";
+import MenuItem from "@mui/material/MenuItem";
+import Box from "@mui/material/Box";
+import InputAdornment from "@mui/material/InputAdornment";
+import FormControl from "@mui/material/FormControl";
+import TextField from "@mui/material/TextField";
+import SearchIcon from "@mui/icons-material/Search";
+import Typography from "@mui/material/Typography";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
 
-
-export default function SearchCountry({ findCountryByName, findCountryByRegion }: { findCountryByName: any, findCountryByRegion: any }) {
-
-  const regions = ["Europe", "Americas", "Africa", "Oceania", "Asia", "Antarctic"];
+export default function SearchCountry({
+  findCountryByName,
+  findCountryByRegion,
+}: {
+  findCountryByName: any;
+  findCountryByRegion: any;
+}) {
+  const regions = [
+    "Europe",
+    "Americas",
+    "Africa",
+    "Oceania",
+    "Asia",
+    "Antarctic",
+  ];
   const [full, setFull] = useState(false);
 
   const handleResize = () => {
@@ -29,11 +40,11 @@ export default function SearchCountry({ findCountryByName, findCountryByRegion }
     } else {
       setFull(false);
     }
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
-  }, [])
+  }, []);
 
   const onChangeRegion = (event: SelectChangeEvent) => {
     const { value } = event.target;
@@ -43,7 +54,7 @@ export default function SearchCountry({ findCountryByName, findCountryByRegion }
   const searchCountryByName = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     findCountryByName(value);
-  }
+  };
 
   return (
     <Box sx={{ mb: 4 }}>
@@ -58,27 +69,37 @@ export default function SearchCountry({ findCountryByName, findCountryByRegion }
         <Grid item xs={12} md={6}>
           <TextField
             id="searchByName"
-            placeholder='Search for a country...'
+            placeholder="Search for a country..."
             size="small"
             fullWidth={full}
             InputProps={{
-              startAdornment: <InputAdornment position="start"><SearchIcon /></InputAdornment>,
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
             }}
             onChange={searchCountryByName}
           />
         </Grid>
-        <Grid item xs={12} md={6} sx={{ textAlign: 'end' }}>
-          <FormControl sx={{ minWidth: full ? '100%' : 270 }} size="small">
+        <Grid item xs={12} md={6} sx={{ textAlign: "end" }}>
+          <FormControl sx={{ minWidth: full ? "100%" : 270 }} size="small">
             <Select
-              defaultValue={'selectRegion'}
+              defaultValue={"selectRegion"}
               onChange={onChangeRegion}
               displayEmpty
-              inputProps={{ 'aria-label': 'Without label' }}
+              inputProps={{ "aria-label": "Without label" }}
             >
-              <MenuItem value={'selectRegion'}>
-                <Typography variant="body2" color="text.secondary">Select by Region</Typography>
+              <MenuItem value={"selectRegion"}>
+                <Typography variant="body2" color="text.secondary">
+                  Select by Region
+                </Typography>
               </MenuItem>
-              {regions.map((region) => <MenuItem key={region} value={region}>{region}</MenuItem>)}
+              {regions.map((region) => (
+                <MenuItem key={region} value={region}>
+                  {region}
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
         </Grid>

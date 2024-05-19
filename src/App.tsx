@@ -1,4 +1,3 @@
-import './App.css';
 import { ThemeProvider } from '@emotion/react';
 import { useSelector } from 'react-redux';
 import { CssBaseline } from '@mui/material';
