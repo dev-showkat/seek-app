@@ -25,11 +25,11 @@ export default function Country({ country }: { country: CountryDetail }) {
                             <Typography variant="body2" >Population : </Typography>
                             <Typography variant="body2" sx={{ mx: 1 }} color="text.secondary">{country.population}</Typography>
                         </Grid>
-                        <Grid item sx={{ display: 'flex' }} xs={8}>
+                        <Grid item sx={{ display: 'flex' }} xs={12}>
                             <Typography variant="body2" >Region : </Typography>
                             <Typography variant="body2" sx={{ mx: 1 }} color="text.secondary">{country.region}</Typography>
                         </Grid>
-                        <Grid item sx={{ display: 'flex' }} xs={8}>
+                        <Grid item sx={{ display: 'flex' }} xs={21}>
                             <Typography variant="body2" >Capital : </Typography>
                             <Typography variant="body2" sx={{ mx: 1 }} color="text.secondary">{country.capital}</Typography>
                         </Grid>

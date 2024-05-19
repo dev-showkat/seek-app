@@ -61,7 +61,6 @@ export default function SearchCountry({ findCountryByName, findCountryByRegion }
             placeholder='Search for a country...'
             size="small"
             fullWidth={full}
-            autoFocus
             InputProps={{
               startAdornment: <InputAdornment position="start"><SearchIcon /></InputAdornment>,
             }}
