@@ -24,7 +24,7 @@ export default function SearchCountry({
     "Asia",
     "Antarctic",
   ];
-  const [full, setFull] = useState(false);
+  const [full, setFull] = useState(window.innerWidth < 600 ? true : false);
 
   const handleResize = () => {
     if (window.innerWidth < 600) {
